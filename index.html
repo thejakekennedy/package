@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Delivery Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header class="form-header">
+        <h1>Delivery Request Form</h1>
+        <p>Please fill out the details below to schedule your delivery.</p>
+    </header>
+
+    <form action="process.php" method="POST" id="deliveryForm">
+        
+        <fieldset>
+            <legend>Contact Information</legend>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group half">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
+                </div>
+                <div class="form-group half">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="delivery-fieldset">
+            <legend>Delivery Address</legend>
+            <div class="form-group">
+                <label for="del_street">Street Address *</label>
+                <input type="text" id="del_street" name="del_street" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="del_city">City *</label>
+                    <input type="text" id="del_city" name="del_city" required>
+                </div>
+                <div class="form-group half">
+                    <label for="del_state">State/Province *</label>
+                    <input type="text" id="del_state" name="del_state" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="del_country">Country *</label>
+                    <input type="text" id="del_country" name="del_country" required>
+                </div>
+                <div class="form-group half">
+                    <label for="del_zip">Postal Code *</label>
+                    <input type="text" id="del_zip" name="del_zip" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Delivery Details</legend>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="deliveryTime">Preferred Time Slot *</label>
+                    <select id="deliveryTime" name="deliveryTime" required>
+                        <option value="" disabled selected>Select a time...</option>
+                        <option value="9AM-12PM">Morning (9:00 AM - 12:00 PM)</option>
+                        <option value="12PM-3PM">Afternoon (12:00 PM - 3:00 PM)</option>
+                        <option value="3PM-6PM">Late Afternoon (3:00 PM - 6:00 PM)</option>
+                        <option value="6PM-9PM">Evening (6:00 PM - 9:00 PM)</option>
+                    </select>
+                </div>
+                <div class="form-group half">
+                    <label for="deliveryNumber">Delivery Number</label>
+                    <input type="text" id="deliveryNumber" name="deliveryNumber">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="deliveryMonth">Delivery Month</label>
+                    <select id="deliveryMonth" name="deliveryMonth">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="form-group half">
+                    <label for="deliveryYear">Delivery Year</label>
+                    <input type="number" id="deliveryYear" name="deliveryYear" min="2024" max="2030" value="2024">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="referralCode">Referral Code (from flyer)</label>
+                <input type="text" id="referralCode" name="referralCode" placeholder="e.g. SUMMER20">
+            </div>
+
+            <div class="form-group">
+                <label for="requestDetails">Specific Request Details</label>
+                <textarea id="requestDetails" name="requestDetails" rows="4" placeholder="Any gate codes, instructions, or specific item details..."></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Billing Address</legend>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="sameAsDelivery">
+                <label for="sameAsDelivery">Same as Delivery Address</label>
+            </div>
+
+            <div class="form-group">
+                <label for="bill_street">Street Address</label>
+                <input type="text" id="bill_street" name="bill_street">
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="bill_city">City</label>
+                    <input type="text" id="bill_city" name="bill_city">
+                </div>
+                <div class="form-group half">
+                    <label for="bill_state">State/Province</label>
+                    <input type="text" id="bill_state" name="bill_state">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="bill_country">Country</label>
+                    <input type="text" id="bill_country" name="bill_country">
+                </div>
+                <div class="form-group half">
+                    <label for="bill_zip">Postal Code</label>
+                    <input type="text" id="bill_zip" name="bill_zip">
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">Submit Request</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

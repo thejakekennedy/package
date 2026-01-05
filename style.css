@@ -1,0 +1,223 @@
+/* Import a modern sans-serif font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Brand Colors defined for reuse */
+:root {
+    --brand-blue: #3e00ff;
+    --brand-blue-hover: #2a00b3;
+    --brand-green: #8dc041;
+    --dark-text: #222222;
+    --med-text: #555555;
+    --light-bg: #f4f6f9;
+    --input-border: #ced4da;
+}
+
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.5;
+    padding: 30px 15px;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    /* A strong top brand line like shipping sites */
+    border-top: 6px solid var(--brand-blue);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.form-header {
+    padding: 40px 50px 20px 50px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+.form-header h1 {
+    color: var(--brand-blue);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: var(--med-text);
+    font-size: 1.1rem;
+}
+
+/* Form Body Padding */
+form {
+    padding: 0 50px 40px 50px;
+}
+
+/* Fieldsets & Legends - The "Sections" */
+fieldset {
+    border: none; /* Remove default border for a cleaner look */
+    padding: 0;
+    margin: 0 0 50px 0;
+}
+
+legend {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    padding: 0 0 10px 0;
+    margin-bottom: 25px;
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    /* Using the brand green to underline sections */
+    border-bottom: 3px solid var(--brand-green);
+}
+
+/* Form Layout */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 30px; /* Wider gap for modern feel */
+    flex-wrap: wrap;
+}
+
+.form-group.half {
+    flex: 1;
+    min-width: 320px; /* Ensures two columns don't squash too much on tablets */
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9rem;
+    text-transform: uppercase; /* Distinctive logistics look */
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px; /* Taller inputs */
+    border: 1px solid var(--input-border);
+    /* Sharper corners, not fully rounded */
+    border-radius: 3px; 
+    font-size: 1rem;
+    color: var(--dark-text);
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+/* Input Focus State - Using the Brand Blue */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--brand-blue);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(62, 0, 255, 0.1); /* Subtle blue glow */
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Custom Select Arrow Styling (Optional, for cleaner look) */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%233e00ff' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+/* Checkbox */
+.checkbox-group {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+    border: 1px solid #e9ecef;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    text-transform: none;
+    cursor: pointer;
+}
+.checkbox-group input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--brand-blue);
+    cursor: pointer;
+}
+
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--brand-blue);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(62, 0, 255, 0.2);
+}
+
+.submit-btn:hover {
+    background-color: var(--brand-blue-hover);
+    box-shadow: 0 6px 12px rgba(62, 0, 255, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(62, 0, 255, 0.2);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+    
+    .form-header, form {
+        padding: 30px 25px;
+    }
+    
+    .form-row {
+        gap: 15px;
+    }
+    
+    .form-group.half {
+        min-width: 100%; /* Stack on mobile */
+    }
+}
